@@ -1,0 +1,62 @@
+* 
+{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body 
+{
+    background: #2f0233;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.spinner
+{
+    position: relative;
+    background: #2f0233;
+    width: 400px;
+    height: 200px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+}
+
+.spinner::before
+{
+    position: absolute;
+    content: '';
+    background: rgba(255, 255, 255, 0.6);
+    inset: 40px -30px;
+    background: linear-gradient(red, yellow);
+    animation: spin 3s linear infinite;
+
+}
+
+.spinner::after 
+{
+    position: absolute;
+    content: '';
+    background: rgba(255, 255, 255, 0.6);
+    inset: 5px 5px;
+    background: #2f0233;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.spinner:hover
+{
+    border: 5px solid linear-gradient(red, yellow);
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
